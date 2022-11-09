@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prac14</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/57e6b371bf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a id="logo-ref" href="#"><img id="logo" src="pc-logo.png" alt="Логотип"></a>
+        <nav class="main">
+            <div class="thumb"></div>
+            <a href="#home">Главная</a>
+            <a href="#section-1">Раздел 1</a>
+            <a href="#section-2">Раздел 2</a>
+            <a href="#section-3">Раздел 3</a>
+            <a href="#section-4">Раздел 4</a>
+            <a href="#section-5">Раздел 5</a>
+            <a href="#section-6">Раздел 6</a>
+            <!-- Menu -->
+            <input class="side-menu" type="checkbox" id="side-menu"/>
+            <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+            <nav class="menu">
+                <a href="#home">Главная</a>
+                <a href="#section-1">Раздел 1</a>
+                <a href="#section-2">Раздел 2</a>
+                <a href="#section-3">Раздел 3</a>
+                <a href="#section-4">Раздел 4</a>
+                <a href="#section-5">Раздел 5</a>
+                <a href="#section-6">Раздел 6</a>
+            </nav>
+        </nav>
+        <script>
+            const container = document.querySelector('.main');
+            const thumb = container.querySelector('.thumb');
+            container.addEventListener('mousemove', (event) => {
+                const x = event.clientX - (thumb.clientWidth/2);
+                thumb.style.left = `${x}px`;
+            });
+        </script>
+    </header>
+    <section id="home">
+        <div class="container">
+            <div class="random-generate-box">
+                <img src="https://live.staticflickr.com/8208/8216315457_28762c496d_n.jpg">
+            </div>
+            <button type="button" class="get-random-cat">Получить кота</button>
+            <div class="random-generate-box">
+                <img src="https://live.staticflickr.com/4010/4584396557_dca09ac1b8_n.jpg">
+            </div>
+            <button type="button" class="get-random-dog">Получить собаку</button>
+        </div>
+    </section>
+    <section id="section-1">
+        <div class="convertor-box">
+            <h2>Конвертер Валют</h2>
+            <div class="convertor">
+                <div class="left-part">
+                    <select name="currency" class="currency"></select>
+                    <input type="number" placeholder="0" id="input"> 
+                </div>
+                <div class="right-part">
+                    <select name="currency" class="currency"></select>
+                    <input type="number" placeholder="0" id="result" disabled> 
+                </div>
+            </div>
+            <button id="convert-btn">Конвертировать</button>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright © 2022 Student MIREA. All Rights Reserved</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
